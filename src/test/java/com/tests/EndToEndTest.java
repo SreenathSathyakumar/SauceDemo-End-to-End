@@ -1,6 +1,7 @@
 package com.tests;
 
 import com.base.BaseTest;
+import com.pages.CheckoutPage;
 import com.pages.InventoryPage;
 import com.pages.LoginPage;
 import org.testng.Assert;
@@ -11,5 +12,15 @@ public class EndToEndTest extends BaseTest {
 public void endtoendtest() {
 	LoginPage loginpage = new LoginPage(driver);
 	loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+	
+	InventoryPage inventory = new InventoryPage(driver);
+    inventory.inventoryflow();
+    
+    CheckoutPage checkout = new CheckoutPage(driver);
+    checkout.checkout("sreenath", "sathyakumar", "600057");
 }
+	
+	
+		
+		
 }
